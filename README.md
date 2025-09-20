@@ -1,4 +1,4 @@
-# dvcpipeline-NitishSingh
+# Dvcpipeline-NitishSingh
 
 This repository demonstrates a data version control (DVC) pipeline using Python. It aims to showcase best practices for managing data science workflows, tracking data and model versions, and ensuring reproducibility in machine learning projects.
 
