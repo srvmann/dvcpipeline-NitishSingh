@@ -3,21 +3,31 @@ stages:
     cmd: python src/dataIngestion.py
     deps:
     - src/dataIngestion.py
+    params:
+    - dataingestion.test_size
     outs:
     - data/raw
+
   dataPreprocessing:
     cmd: python src/dataPreprocessing.py
     deps:
     - data/raw
     - src/dataPreprocessing.py
+    params:
+    - dataPreprocessing.max_features
+    - dataPreprocessing.min_df
     outs:
     - data/processed
+
   modelbuilding:
     cmd: python src/modelbuilding.py
     deps:
     - data/processed
     - data/raw
     - src/modelbuilding.py
+    params:
+    - modelbuilding.random_state
+    - modelbuilding.max_iter
     outs:
     - models/model.pkl
 

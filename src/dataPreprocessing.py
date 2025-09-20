@@ -1,11 +1,15 @@
 import os
 import re
 import string
+import yaml
 import pandas as pd
 import nltk
 from nltk.corpus import stopwords
 from sklearn.feature_extraction.text import CountVectorizer
 import scipy.sparse # Needed to save the sparse matrix
+
+# Importing the parameter from params.yaml file
+params =  yaml.safe_load(open("params.yaml","r"))["dataPreprocessing"]
 
 # Fetch the data from data/raw folder
 train_data = pd.read_csv("./data/raw/train.csv")
@@ -56,7 +60,7 @@ test_data['combined_text']  = test_data['title'] + ' ' + test_data['text']
 
 # Initialize the CountVectorizer
 # You can tune parameters like max_features to limit the vocabulary size
-vectorizer = CountVectorizer(max_features=500, min_df=2)
+vectorizer = CountVectorizer(max_features = params["max_features"], min_df = params["min_df"])
 
 # Fit the vectorizer on the TRAINING data and transform it
 # This learns the vocabulary from the training data

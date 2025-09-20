@@ -1,8 +1,12 @@
 import os
+import yaml
 import pandas as pd
 import scipy.sparse
 import pickle
 from sklearn.linear_model import LogisticRegression
+
+# Importing the parameter from params.yaml file
+params =  yaml.safe_load(open("params.yaml","r"))["modelbuilding"]
 
 print("--- Starting Model Building Stage ---")
 
@@ -36,7 +40,7 @@ except KeyError:
 
 # --- 3. Build and Train the Model ---
 print("Training the Logistic Regression model...")
-model = LogisticRegression(random_state=42, max_iter=1000)
+model = LogisticRegression(random_state = params["random_state"],max_iter = params["max_iter"])
 model.fit(X_train, y_train)
 print("Model training complete.")
 
