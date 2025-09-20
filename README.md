@@ -1,6 +1,6 @@
 # dvcpipeline-NitishSingh
 
-This repository demonstrates a data version control (DVC) pipeline using Python. It is aimed at showcasing best practices for managing data science workflows, tracking data and model versions, and ensuring reproducibility in machine learning projects.
+This repository demonstrates a data version control (DVC) pipeline using Python. It aims to showcase best practices for managing data science workflows, tracking data and model versions, and ensuring reproducibility in machine learning projects.
 
 ## Features
 
@@ -18,8 +18,7 @@ This repository demonstrates a data version control (DVC) pipeline using Python.
 ├── models/             # Model files tracked by DVC
 ├── dvc.yaml            # DVC pipeline definition
 ├── dvc.lock            # DVC pipeline lock file
-├── requirements.txt    # Python dependencies
-└── README.md           # Repository documentation
+
 ```
 
 ## Getting Started
@@ -69,7 +68,7 @@ You can also run individual stages using `dvc repro <stage-name>`.
 
 ## Usage
 
-Modify Python scripts in the `src/` directory to customize data processing and model training. Use DVC commands to add new data, track experiments, and share results.
+Modify Python scripts in the `src/` directory to customise data processing and model training. Use DVC commands to add new data, track experiments, and share results.
 
 ## Contributing
 
